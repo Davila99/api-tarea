@@ -10,6 +10,8 @@ import { Categoria } from './categorias/entities/categoria.entity';
 import { Genero } from './generos/entities/genero.entity';
 import { Ciudade } from './ciudades/entities/ciudade.entity';
 import { Marca } from './marcas/entities/marca.entity';
+import { UsersModule } from './users/users.module';
+import { ProfilesModule } from './profiles/profiles.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -21,7 +23,7 @@ import { Marca } from './marcas/entities/marca.entity';
     database: 'hola',
     entities: [Categoria,Genero,Ciudade,Marca],
     synchronize: true,
-  }),CategoriasModule, CiudadesModule, GenerosModule, MarcasModule],
+  }),CategoriasModule, CiudadesModule, GenerosModule, MarcasModule, UsersModule, ProfilesModule],
   controllers: [AppController],
   providers: [AppService],
 })
