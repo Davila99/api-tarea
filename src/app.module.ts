@@ -12,6 +12,8 @@ import { Ciudade } from './ciudades/entities/ciudade.entity';
 import { Marca } from './marcas/entities/marca.entity';
 import { UsersModule } from './users/users.module';
 import { ProfilesModule } from './profiles/profiles.module';
+import { User } from './users/entities/user.entity';
+import { Profile } from './profiles/entities/profile.entity';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -21,7 +23,7 @@ import { ProfilesModule } from './profiles/profiles.module';
     username: 'postgres',
     password: 'root',
     database: 'hola',
-    entities: [Categoria,Genero,Ciudade,Marca],
+    entities: [Categoria,Genero,Ciudade,Marca,User,Profile],
     synchronize: true,
   }),CategoriasModule, CiudadesModule, GenerosModule, MarcasModule, UsersModule, ProfilesModule],
   controllers: [AppController],
