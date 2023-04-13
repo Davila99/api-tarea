@@ -10,7 +10,9 @@ export class User {
 
     @Column()
     password: string;
-    @OneToOne(() => Profile, (profile) => profile.user) // specify inverse side as a second parameter
+    @OneToOne(() => Profile, (profile) => profile.user,{ 
+        onDelete: 'CASCADE' 
+      }) 
     @JoinColumn()
     profile: Profile
 }
