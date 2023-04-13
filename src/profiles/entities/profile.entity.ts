@@ -1,4 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+import { User } from 'src/users/entities/user.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
 @Entity()
 export class Profile {
   @PrimaryGeneratedColumn()
@@ -12,4 +14,7 @@ export class Profile {
 
   @Column({ default: true })
   isActive: boolean;
+
+  @OneToOne(() => User, (user) => user.profile) // specify inverse side as a second parameter
+  user: User
 }
